@@ -52,6 +52,15 @@ class GravityfallProg {
                 Color: "rgb(0, 170, 53)",
                 Radius: 6
             },
+
+            {
+                Mass: 7e-9,
+                Position: new Vector(-12, 0),
+                Velocity: new Vector(0, -0.4),
+                Color: "rgb(0, 170, 53)",
+                Radius: 6
+            },
+
         ];
         this.points = tmppoints.map(point => new Particle(point.Mass, point.Position, point.Velocity, point.Color, point.Radius))
         this.withTime = false;
