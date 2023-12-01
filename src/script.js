@@ -214,18 +214,45 @@ class GravityfallProg {
         this.points.forEach(point => console.log(point));
     }
     
-    // newpl() {
-    //     var neewpl = [
-    //         {
-    //             Mass: Math.random(0, 3),
-    //             Position: new Vector (Math.random(-15, 15), Math.random(-15, 15)),
-    //             Velocity: new Vector (Math.random(-0.1, 0.1), Math.random(-0.1, 0.1)),
-    //             Color: "black",
-    //             Radius: Math.random(0, 20)
-    //         }
-    //     ]
-    //     this.points.push(neewpl)
-    // }
+    newpl() {
+        var newmass = Number(prompt("Podaj masę"))
+        var newx = Number(prompt("Podaj pozycję x"))
+        var newy = Number(prompt("Podaj pozycję y"))
+        var newvelx = Number(prompt("Podaj wektor x"))
+        var newvely = Number(prompt("Podaj wektor y"))
+        var newradius = Number(prompt("Podaj promień"))
+        var colloor = "blueviolet"
+        var neewpl = [
+            {
+                Mass: newmass,
+                Position: new Vector (newx, newy),
+                Velocity: new Vector (newvelx, newvely),
+                Color: colloor,
+                Radius: newradius
+            }
+        ]
+        var newpart = new Particle(neewpl[0].Mass, neewpl[0].Position, neewpl[0].Velocity, neewpl[0].Color, neewpl[0].Radius)
+        this.points.push(newpart)
+    }
+    newc() {
+        var newmass = Math.random(0.1, 0.6)
+        var newx = -30
+        var newy = -30
+        var newvelx = Math.random(0.1, 3)
+        var newvely = Math.random(0.1, 3)
+        var newradius = 5 + newmass * 20    
+        var neewpl = [
+            {
+                Mass: newmass,
+                Position: new Vector (newx, newy),
+                Velocity: new Vector (newvelx, newvely),
+                Color: "grey",
+                Radius: newradius
+            }
+        ]
+        var newpart = new Particle(neewpl[0].Mass, neewpl[0].Position, neewpl[0].Velocity, neewpl[0].Color, neewpl[0].Radius)
+        this.points.push(newpart)
+    }
 }
 
 class Particle {
@@ -270,6 +297,10 @@ function imgfun() {
     }
 }
 
-// function newplanet() {
-//     prog.newpl()
-// }
+function newplanet(){
+    prog.newpl()
+}
+
+function newcomet(){
+    prog.newc()
+}
