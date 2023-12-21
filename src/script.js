@@ -235,7 +235,7 @@ class GravityfallProg {
         this.points.push(newpart)
     }
     newc() {
-        var newmass = Math.random(0.1, 0.6)
+        var newmass = Math.random(0.1, 0.3)
         var newx = -30
         var newy = -30
         var newvelx = Math.random(0.1, 3)
